@@ -18,7 +18,7 @@ int main()
 	// Inner comment!
 	char *code[] = {
 		"#include <stdio.h>",
-		"void print_cmnt_line(char *s)",
+		"void print_line(char *s)",
 		"{",
 		"	printf(\"		%c\", 34);",
 		"	for (int i = 0; s && s[i]; i++)",
@@ -38,9 +38,9 @@ int main()
 		"	char *code[] = {",
 		"		0,",
 		"	};",
-		"	for (int i = 0; i < 17; i++) printf(\"%s\\n\", code[i]);",
-		"	for (int i = 0; code[i]; i++) print_line(code[i])",
-		"	for (int i = 0; code[i]; i++) printf(\"%s\\n\", code[i]);",
+		"	for (int i = 0; i < 19; i++) printf(\"%s\\n\", code[i]);",
+		"	for (int i = 0; code[i]; i++) print_line(code[i]);",
+		"	for (int i = 19; code[i]; i++) printf(\"%s\\n\", code[i]);",
 		"}",
 		0,
 	};
