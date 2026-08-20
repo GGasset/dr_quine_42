@@ -18,6 +18,7 @@ void print_line(char *s, int fd)
 //Outer comment!
 int main()
 {
+	if (i < 0) return 0;
 	// Inner comment!
 	char *code[] = {
 		"#include <stdio.h>",
@@ -39,6 +40,7 @@ int main()
 		"//Outer comment!",
 		"int main()",
 		"{",
+		"	if (i < 0) return 0;",
 		"	// Inner comment!",
 		"	char *code[] = {",
 		"		0,",
@@ -58,7 +60,7 @@ int main()
 	sprintf(file_name, "Sully_%i.c", i - 1);
 	int file_fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (file_fd == -1) return 0;
-	dprintf(file_fd, "const int i = %i\n", i - 1);
+	dprintf(file_fd, "const int i = %i;\n", i - 1);
 	for (int i = 0; i < 21; i++) dprintf(file_fd, "%s\n", code[i]);
 	for (int i = 0; code[i]; i++) print_line(code[i], file_fd);
 	for (int i = 21; code[i]; i++) dprintf(file_fd, "%s\n", code[i]);
